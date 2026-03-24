@@ -1,0 +1,1231 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIE Comercial 2026 | Extreme Group</title>
+<style>
+:root {
+  --black:  #111111;
+  --dark:   #1A1A1A;
+  --red:    #E83030;
+  --red-dk: #C02020;
+  --red-lt: #FFF0F0;
+  --gray:   #666666;
+  --border: #E2E2E2;
+  --light:  #F5F5F7;
+  --white:  #FFFFFF;
+  --green:  #1E7A3E;
+  --blue:   #1A4A8A;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',Arial,sans-serif; background:#E8E8EA; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:10px 20px; }
+.wrap { width:1060px; }
+
+/* SLIDES */
+.slide { display:none; background:var(--white); border-radius:12px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,.14); flex-direction:column; min-height:480px; }
+.slide.on { display:flex; }
+
+/* COVER */
+.cover { background:var(--black); flex:1; display:flex; flex-direction:column; justify-content:center; padding:56px 56px 52px; position:relative; overflow:hidden; }
+.cover::after { content:''; position:absolute; right:-40px; bottom:-60px; width:280px; height:280px; border-radius:50%; border:50px solid rgba(232,48,48,.10); pointer-events:none; }
+.cv-stripe { position:absolute; top:0; left:0; bottom:0; width:5px; background:var(--red); }
+.cv-logo { display:flex; align-items:center; gap:14px; margin-bottom:52px; }
+.cv-x { width:44px; height:44px; background:#fff; flex-shrink:0; clip-path:polygon(20% 0%,50% 35%,80% 0%,100% 20%,65% 50%,100% 80%,80% 100%,50% 65%,20% 100%,0% 80%,35% 50%,0% 20%); }
+.cv-name { color:#fff; font-size:20px; font-weight:400; letter-spacing:.5px; }
+.cv-name strong { font-weight:700; }
+.cover h1 { color:#fff; font-size:42px; font-weight:800; line-height:1.2; margin-bottom:14px; }
+.cover h1 em { color:var(--red); font-style:normal; }
+.cover .cv-sub { color:rgba(255,255,255,.6); font-size:17px; margin-bottom:40px; }
+.cv-meta { display:flex; gap:36px; padding-top:24px; border-top:1px solid rgba(255,255,255,.12); }
+.cv-meta-item label { font-size:10px; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,.35); display:block; }
+.cv-meta-item p { font-size:13px; font-weight:600; color:rgba(255,255,255,.75); margin-top:3px; }
+
+/* HEADER */
+.hd { background:var(--black); color:#fff; padding:12px 36px; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
+.hd h1 { font-size:17px; font-weight:700; }
+.hd-right { display:flex; align-items:center; gap:12px; }
+.hd-logo { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border-radius:5px; padding:4px 12px; }
+.hd-x { width:18px; height:18px; background:#fff; clip-path:polygon(20% 0%,50% 35%,80% 0%,100% 20%,65% 50%,100% 80%,80% 100%,50% 65%,20% 100%,0% 80%,35% 50%,0% 20%); flex-shrink:0; }
+.hd-name { color:#fff; font-size:10.5px; font-weight:400; }
+.hd-name strong { font-weight:700; }
+.badge { background:var(--red); color:#fff; padding:3px 12px; border-radius:20px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; white-space:nowrap; }
+.badge.gray { background:#444; }
+.badge.green { background:var(--green); }
+
+/* BODY */
+.bd { padding:16px 36px; flex:1; background:var(--white); }
+.bd.bg { background:var(--light); }
+
+/* FOOTER */
+.ft { background:var(--light); padding:8px 36px; display:flex; justify-content:space-between; align-items:center; font-size:11px; color:var(--gray); border-top:1px solid var(--border); flex-shrink:0; }
+.pb-wrap { display:flex; align-items:center; gap:8px; }
+.pb { width:80px; height:3px; background:var(--border); border-radius:2px; overflow:hidden; }
+.pb-fill { height:100%; background:var(--red); border-radius:2px; transition:width .3s; }
+
+/* SECTION DIVIDER */
+.sec-div { background:var(--black); flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding:44px 56px 48px; position:relative; overflow:hidden; }
+.sec-div .sec-n { position:absolute; right:32px; bottom:-24px; font-size:200px; font-weight:900; color:rgba(255,255,255,.04); line-height:1; pointer-events:none; }
+.sec-div .sec-lbl { color:var(--red); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px; margin-bottom:10px; }
+.sec-div h2 { color:#fff; font-size:38px; font-weight:800; line-height:1.2; }
+
+/* SECTION TITLE */
+.st { font-size:10px; font-weight:700; color:var(--red); text-transform:uppercase; letter-spacing:2px; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+.st::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* GRID */
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
+.gcol { display:flex; flex-direction:column; gap:12px; }
+
+/* CARD */
+.card { background:var(--light); border-radius:8px; padding:15px; border-left:4px solid var(--red); }
+.card.bl { border-left-color:var(--blue); }
+.card.gn { border-left-color:var(--green); }
+.card.bk { border-left-color:#444; }
+.card h3 { font-size:10px; color:var(--gray); margin-bottom:5px; text-transform:uppercase; font-weight:700; letter-spacing:.5px; }
+.card p { font-size:13px; color:var(--dark); line-height:1.55; }
+.big { font-size:24px; font-weight:800; color:var(--red); }
+.big.bk { color:var(--black); }
+.big.gn { color:var(--green); }
+.big span { font-size:10.5px; font-weight:400; color:var(--gray); }
+
+/* TABLE */
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { background:var(--black); color:#fff; padding:8px 12px; text-align:left; font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+td { padding:7px 12px; border-bottom:1px solid var(--border); color:var(--dark); }
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:#FAFAFA; }
+td.r, th.r { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+td.c { text-align:center; }
+.tr-hl td { background:#FFF8F8; }
+.tr-tot td { background:var(--black); color:#fff; font-weight:700; }
+.tr-sub td { background:var(--light); font-weight:600; color:var(--dark); }
+
+/* ALERT */
+.alert { background:var(--red-lt); border-left:4px solid var(--red); border-radius:0 8px 8px 0; padding:9px 13px; font-size:10.5px; color:var(--dark); margin:8px 0; line-height:1.5; }
+.alert strong { color:var(--red-dk); }
+.note { font-size:11px; color:var(--gray); margin-top:6px; font-style:italic; line-height:1.5; }
+
+/* BULLETS */
+.bul { list-style:none; }
+.bul li { padding:7px 0; border-bottom:1px solid var(--border); display:flex; gap:10px; font-size:13px; color:var(--dark); line-height:1.5; }
+.bul li:last-child { border-bottom:none; }
+.ic { width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px; font-weight:700; flex-shrink:0; margin-top:1px; }
+.ic.rd { background:var(--red); }
+.ic.bk { background:#444; }
+.ic.gn { background:var(--green); }
+
+/* BADGES */
+.bge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:700; text-transform:uppercase; }
+.bge-rd { background:var(--red-lt); color:var(--red-dk); }
+.bge-bk { background:#EFEFEF; color:#444; }
+.bge-gn { background:#E4F5EC; color:var(--green); }
+.bge-bl { background:#E8F0FA; color:var(--blue); }
+
+/* NAV */
+.nav { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+.nav button { background:var(--black); color:#fff; border:none; padding:9px 22px; border-radius:6px; cursor:pointer; font-size:13px; font-weight:600; transition:background .2s; }
+.nav button:hover { background:#333; }
+.nav button:disabled { background:#C0C0C4; cursor:default; }
+.btn-pdf { background:transparent !important; color:var(--dark) !important; border:1.5px solid var(--border) !important; font-size:12px !important; padding:7px 14px !important; }
+.btn-pdf:hover { background:var(--light) !important; border-color:#999 !important; }
+@media print {
+  * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  .nav, .modal-ov { display:none !important; }
+  .slide { display:flex !important; page-break-after:always; break-after:page; position:relative !important; width:100% !important; min-height:100vh; box-shadow:none !important; border-radius:0 !important; margin:0 !important; }
+}
+.dots { display:flex; gap:5px; flex-wrap:wrap; justify-content:center; max-width:300px; }
+.dot { width:7px; height:7px; background:#C0C0C4; border-radius:50%; cursor:pointer; transition:background .2s; }
+.dot.on { background:var(--red); }
+
+/* SIMULATOR */
+.sim-input { background:#FFFBF0; border:1.5px solid #E8B84B; border-radius:6px; padding:5px 9px; font-size:13px; font-weight:600; width:100%; box-sizing:border-box; color:var(--dark); }
+.sim-input:focus { outline:none; border-color:#C8921A; background:#FFF8E6; box-shadow:0 0 0 3px rgba(232,184,75,.2); }
+input[type="range"].sim-input { background:transparent; border:none; padding:4px 0; }
+.sim-label { font-size:10px; text-transform:uppercase; letter-spacing:.5px; color:var(--gray); margin-bottom:4px; font-weight:600; display:block; }
+.sim-q { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:8px; margin-bottom:12px; }
+.sim-out-row { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid var(--border); font-size:12.5px; }
+.sim-out-row:last-child { border-bottom:none; }
+.sim-out-lbl { color:var(--gray); }
+.sim-out-val { font-weight:700; color:var(--dark); }
+.sim-out-val.rd { color:var(--red); }
+.sim-out-val.gn { color:var(--green); }
+.sim-out-val.gy { color:var(--gray); font-weight:400; font-size:11px; }
+.sim-box { background:var(--white); border:1px solid var(--border); border-radius:8px; padding:14px; }
+.sim-box h4 { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--black); margin-bottom:10px; }
+th.c { text-align:center; }
+.tbl-compact td, .tbl-compact th { padding:4px 8px; white-space:nowrap; }
+/* MODAL ELEGÍVEIS */
+.modal-ov{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:999;align-items:center;justify-content:center;}
+.modal-ov.on{display:flex;}
+.modal-card{background:#fff;border-radius:10px;padding:20px 24px;max-width:580px;width:92%;max-height:78vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.35);}
+.modal-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding-bottom:8px;border-bottom:3px solid var(--black);}
+.modal-hd h3{font-size:14px;font-weight:800;color:var(--black);}
+.modal-hd span{font-size:11px;color:var(--gray);margin-left:8px;font-weight:400;}
+.modal-close{background:none;border:none;font-size:24px;cursor:pointer;color:var(--gray);line-height:1;padding:0;}
+.modal-close:hover{color:var(--red);}
+.cargo-btn{background:none;border:none;cursor:pointer;font-size:11px;font-weight:700;color:var(--dark);text-align:left;padding:0;text-decoration:underline dotted;text-underline-offset:2px;white-space:nowrap;}
+.cargo-btn:hover{color:var(--red);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- S1: CAPA -->
+<div class="slide on" id="s1">
+  <div class="cover">
+    <div class="cv-stripe"></div>
+    <div class="cv-logo">
+      <div class="cv-x"></div>
+      <div class="cv-name"><strong>EXTREME</strong> GROUP</div>
+    </div>
+    <h1>PIE Comercial 2026<br><em>Análise e Alternativas</em></h1>
+    <div class="cv-sub">Programa de Incentivo Extreme — Área Comercial</div>
+    <div class="cv-meta">
+      <div class="cv-meta-item"><label>Documento</label><p>Análise e Proposta</p></div>
+      <div class="cv-meta-item"><label>Público</label><p>CEO e Diretoria</p></div>
+      <div class="cv-meta-item"><label>Data</label><p>Março 2026</p></div>
+      <div class="cv-meta-item"><label>Elegíveis</label><p>29 profissionais</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- S2: AGENDA -->
+<div class="slide" id="s2">
+  <div class="hd"><h1>Agenda</h1><div class="hd-right"><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd" style="display:flex;flex-direction:column;justify-content:center;">
+    <table>
+      <thead><tr><th style="width:52px">Seção</th><th>Tema</th><th>Conteúdo</th></tr></thead>
+      <tbody>
+        <tr class="tr-hl" style="cursor:pointer" onclick="goTo(4)"><td style="text-align:center;font-size:22px;font-weight:800;color:var(--red);">01</td><td style="font-weight:700">Resumo Executivo</td><td style="color:var(--gray)">Contexto, diagnóstico e recomendação</td></tr>
+        <tr style="cursor:pointer" onclick="goTo(5)"><td style="text-align:center;font-size:22px;font-weight:800;color:#bbb">02</td><td style="font-weight:700">Funcionamento e Diagnóstico</td><td style="color:var(--gray)">Modelo atual, contexto da revisão, lacunas</td></tr>
+        <tr class="tr-hl" style="cursor:pointer" onclick="goTo(9)"><td style="text-align:center;font-size:22px;font-weight:800;color:var(--red);">03</td><td style="font-weight:700">Modelo Proposto</td><td style="color:var(--gray)">Estrutura, população elegível, split tri/anual</td></tr>
+        <tr style="cursor:pointer" onclick="goTo(15)"><td style="text-align:center;font-size:22px;font-weight:800;color:#bbb">04</td><td style="font-weight:700">Simulação de Custos</td><td style="color:var(--gray)">Custo coletivo 100%/200% + simulador individual</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:14px;">Clique em qualquer seção para navegar. Use os botões ou teclas ←/→.</p>
+  </div>
+  <div class="ft"><span>Agenda</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb2" style="width:12%"></div></div><span id="pc2">2 / 17</span></div></div>
+</div>
+
+<!-- S3: DIV SEC 01 -->
+<div class="slide" id="s3">
+  <div class="sec-div" style="flex:1">
+    <div class="sec-n">01</div>
+    <div class="sec-lbl">Seção 01</div>
+    <h2>Resumo<br>Executivo</h2>
+  </div>
+</div>
+
+<!-- S4: RESUMO EXECUTIVO -->
+<div class="slide" id="s4">
+  <div class="hd"><h1>Resumo Executivo</h1><div class="hd-right"><span class="badge gray">Visão Geral</span><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd">
+    <div class="g2">
+      <div class="gcol">
+        <div class="st">Contexto</div>
+        <div class="card bk"><p>A revisão do PIE Comercial 2026 foi motivada por questionamentos sobre a <strong>conexão entre resultados individuais e o resultado do negócio</strong> — incluindo controle de caixa em trimestres de alta sazonalidade e adequação dos targets após expansão da equipe comercial.</p></div>
+        <div class="st">Diagnóstico — lacunas identificadas</div>
+        <ul class="bul" style="font-size:12.5px;">
+          <li><span class="ic rd">✗</span>Modelo exclusivamente anual — sem ritmo trimestral</li>
+          <li><span class="ic rd">✗</span>Targets desatualizados vs. mercado e escopo das funções</li>
+          <li><span class="ic rd">✗</span>Gatilho EBITDA de 50% não reflete a ambição do negócio</li>
+          <li><span class="ic rd">✗</span>Conexão insuficiente entre resultado individual, do negócio e reconhecimento</li>
+          <li><span class="ic rd">✗</span>Desalinhamento com práticas de mercado para equipes B2B</li>
+        </ul>
+      </div>
+      <div class="gcol">
+        <div class="st">Alternativas analisadas</div>
+        <div class="card bk"><h3>Cenário Base (Proposta Interna)</h3><p>Targets atualizados, frequência trimestral, sem teto.</p></div>
+        <div class="card" style="border-left-color:#888"><h3>Alternativa: Teto Trimestral</h3><p>Adiciona teto de 100% por trimestre; excedente pago no balanço anual.</p></div>
+        <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;"><h3 style="margin:0">Recomendação: Teto Trimestral + Bônus Anual</h3><span class="badge" style="font-size:9px;padding:2px 8px">Recomendado</span></div><p>Parcela trimestral limitada a 100% + balanço anual + bônus anual. Custo previsível e aceleração concentrada no fechamento do ano.</p></div>
+        <div class="card gn"><h3>Custo total a 100%</h3><div class="big gn">R$ 4.676.400</div><p style="font-size:11px;color:var(--gray);margin-top:3px;">29 elegíveis · Gatilho EBITDA proposto: 80% · Sem encargos</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Seção 01 · Resumo Executivo</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb4"></div></div><span id="pc4"></span></div></div>
+</div>
+
+<!-- S5: DIV SEC 02 -->
+<div class="slide" id="s5">
+  <div class="sec-div" style="flex:1">
+    <div class="sec-n">02</div>
+    <div class="sec-lbl">Seção 02</div>
+    <h2>Funcionamento e Diagnóstico<br>do Modelo Atual</h2>
+  </div>
+</div>
+
+<!-- S6: MODELO ATUAL -->
+<div class="slide" id="s6">
+  <div class="hd"><h1>Modelo Atual — PIE Comercial 2025</h1><div class="hd-right"><span class="badge gray">Norma Vigente</span><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd">
+    <div class="g2">
+      <div class="gcol">
+        <div class="st">Elegíveis e targets</div>
+        <table>
+          <thead><tr><th>Cargo elegível</th><th class="c">Target (ICP)</th><th>Frequência</th><th>Pagamento</th></tr></thead>
+          <tbody>
+            <tr><td>Account Manager</td><td class="c">8 sal</td><td>Anual</td><td>Até junho do ano seguinte</td></tr>
+            <tr><td>Diretor Comercial</td><td class="c">8 sal</td><td>Anual</td><td>Até junho do ano seguinte</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Norma vigente cobre apenas Diretores Comerciais e AMs. Admissão até 31/08; saídas antes de 31/12 não recebem.</p>
+        <div class="st" style="margin-top:14px">Composição dos indicadores</div>
+        <table>
+          <thead><tr><th>Público</th><th class="c">Meta Topo</th><th class="c">Meta N1</th><th class="c">Meta Individual</th></tr></thead>
+          <tbody>
+            <tr><td>Time Comercial</td><td class="c"><strong>35%</strong></td><td class="c"><strong>35%</strong></td><td class="c"><strong>30%</strong></td></tr>
+          </tbody>
+        </table>
+        <p class="note">Indicadores específicos por elegível comunicados individualmente em anexo ao plano de metas.</p>
+      </div>
+      <div class="gcol">
+        <div class="st">Parâmetros da norma</div>
+        <div class="g3">
+          <div class="card bk"><h3>Gatilho Global</h3><div style="font-size:15px;font-weight:800;color:var(--dark);margin:4px 0">EBITDA ≥ 50%</div><p style="font-size:11px;color:var(--gray)">Gatilho corporativo</p></div>
+          <div class="card bk"><h3>Gatilho Comercial</h3><div style="font-size:15px;font-weight:800;color:var(--dark);margin:4px 0">IND ≥ 50%</div><p style="font-size:11px;color:var(--gray)">&lt; 50% individual → zera 100%</p></div>
+          <div class="card bk"><h3>CRB</h3><div style="font-size:15px;font-weight:800;color:var(--dark);margin:4px 0">±50 pp</div><p style="font-size:11px;color:var(--gray)">Fator qualitativo (CEO, CHRO, CFO, líder)</p></div>
+        </div>
+        <div class="alert"><strong>Curva com deflatores:</strong> ating. 50–79% → payout 30–59% (−20 pp) · 80–99% → payout 70–89% (−10 pp) · 100%+ → sem deflator</div>
+        <div class="alert" style="border-left-color:var(--blue);background:#EEF3FA;color:var(--dark)"><strong style="color:var(--blue)">Observação:</strong> Pagamento em parcela única anual, sem distinção por nível. Atingimentos acima de 200% avaliados pontualmente.</div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Seção 02 · Modelo Atual</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb6"></div></div><span id="pc6"></span></div></div>
+</div>
+
+<!-- S7: CONTEXTO -->
+<div class="slide" id="s7">
+  <div class="hd"><h1>Contexto da Revisão</h1><div class="hd-right"><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd">
+    <div class="st">Linha do tempo</div>
+    <div class="gcol">
+      <div class="card bk" style="padding:14px 16px">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span class="bge bge-bk" style="white-space:nowrap;margin-top:2px;">Jan/2026</span>
+          <div><strong>Diagnóstico e Recomendações Iniciais</strong><p style="margin-top:3px;font-size:10.5px;color:var(--gray)">Apresentação de diagnóstico com seis lacunas no modelo vigente. Proposta de atualização de targets, bônus anual para Diretoria/VP, incentivo trimestral e nova curva de alavancagem.</p></div>
+        </div>
+      </div>
+      <div class="card" style="border-left-color:#888;padding:14px 16px">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span class="bge bge-bk" style="white-space:nowrap;margin-top:2px;">Fev/2026</span>
+          <div><strong>Definição do Modelo de Incentivo</strong><p style="margin-top:3px;font-size:10.5px;color:var(--gray)">Confirmação do modelo de <strong>atingimento de metas</strong> (e não comissionamento). Impacta indicadores, previsibilidade de custo e alinhamento com resultado coletivo. <a href="#" onclick="showApendice();return false;" style="color:var(--red);font-size:11px;">→ Ver Apêndice</a></p></div>
+        </div>
+      </div>
+      <div class="card" style="padding:14px 16px">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span class="bge bge-rd" style="white-space:nowrap;margin-top:2px;">Mar/2026</span>
+          <div><strong>Alinhamento com CEO</strong><p style="margin-top:3px;font-size:10.5px;color:var(--gray)">Questionamentos sobre conexão entre resultado individual e do negócio: (1) exposição de caixa sem teto trimestral e (2) aumento de targets sem garantia de autofinanciamento via EBITDA. O modelo recomendado endereça ambas as questões.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Seção 02 · Contexto</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb7"></div></div><span id="pc7"></span></div></div>
+</div>
+
+<!-- S8: DIAGNÓSTICO -->
+<div class="slide" id="s8">
+  <div class="hd"><h1>Diagnóstico — Lacunas do Modelo Atual</h1><div class="hd-right"><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd bg">
+    <div class="st">Seis lacunas e como cada cenário as endereça</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div class="card" style="background:var(--white)"><h3>01 · Frequência exclusivamente anual</h3><p style="font-size:10.5px;margin-bottom:8px">Pagamento único ao final do ano reduz o senso de urgência e o reconhecimento ao longo do ciclo comercial.</p><span class="bge bge-gn">→ Cenário Base (Proposta Interna) e Recomendação (frequência trimestral)</span></div>
+      <div class="card" style="background:var(--white)"><h3>02 · Targets desatualizados vs. mercado</h3><p style="font-size:10.5px;margin-bottom:8px">Ger. Coml. com 3 sal e Dir./VP com 8 sal não refletem complexidade atual das funções nem o referencial B2B.</p><span class="bge bge-gn">→ Cenário Base (novos targets por nível)</span></div>
+      <div class="card" style="background:var(--white)"><h3>03 · Gatilho EBITDA de 50% desalinhado com as necessidades do negócio</h3><p style="font-size:10.5px;margin-bottom:8px">Régua baixa permite pagamento de incentivos mesmo em cenários de resultado insatisfatório para o negócio.</p><span class="bge bge-gn">→ Recomendação (gatilho elevado para 80%, aplicado ao módulo anual)</span></div>
+      <div class="card" style="background:var(--white)"><h3>04 · Baixa conexão resultado individual / negócio</h3><p style="font-size:10.5px;margin-bottom:8px">Pagamento único anual enfraquece o vínculo entre esforço, resultado trimestral e recompensa percebida.</p><span class="bge bge-gn">→ Recomendação (teto trimestral + módulo anual independente)</span></div>
+      <div class="card" style="background:var(--white)"><h3>05 · Desalinhamento com práticas de mercado para equipes comerciais B2B</h3><p style="font-size:10.5px;margin-bottom:8px">Frequência de pagamento, split tri/anual e targets desalinhados com referencial competitivo para funções comerciais de complexidade equivalente no Brasil, sobretudo para a liderança.</p><span class="bge bge-gn">→ Cenário Base (targets atualizados) + Recomendação (split diferenciado por nível)</span></div>
+      <div class="card" style="background:var(--white)"><h3>06 · Baixo protagonismo individual da equipe comercial</h3><p style="font-size:10.5px;margin-bottom:8px">Modelo atual concentra 70% do peso em metas coletivas (Meta Topo 35% + Meta N1 35%) e apenas 30% em metas individuais — gerando dependência dos Diretores e do Presidente como principais fechadores de negócios.</p><span class="bge bge-gn">→ Recomendação (parcelas trimestrais com peso 100% individual)</span></div>
+    </div>
+  </div>
+  <div class="ft"><span>Seção 02 · Diagnóstico</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb8"></div></div><span id="pc8"></span></div></div>
+</div>
+
+<!-- S9: DIV SEC 03 -->
+<div class="slide" id="s9">
+  <div class="sec-div" style="flex:1">
+    <div class="sec-n">03</div>
+    <div class="sec-lbl">Seção 03</div>
+    <h2>Modelo<br>Proposto</h2>
+  </div>
+</div>
+
+<!-- S10: CENÁRIO BASE -->
+<div class="slide" id="s10">
+  <div class="hd"><h1>Cenário Base — Proposta Interna</h1><div class="hd-right"><span class="badge gray">Referência</span><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd" style="overflow-x:auto;">
+    <div class="st">Proposta interna: targets atualizados, frequência trimestral, sem teto</div>
+    <table class="tbl-compact" style="font-size:10px;table-layout:auto;width:100%">
+      <thead>
+        <tr>
+          <th class="c">Cargo <span style="font-size:8px;font-weight:400;text-transform:none;letter-spacing:0;opacity:.7">↓ ver elegíveis</span></th>
+          <th class="c">Qtd</th>
+          <th class="c">Sal. médio</th>
+          <th class="c">Target</th>
+          <th class="c">Tri (100%)<br><span style="font-size:8px;font-weight:400;text-transform:none;letter-spacing:0">4× / ano</span></th>
+          <th class="c">Indicadores — Trimestre</th>
+          <th class="c">Anual (100%)</th>
+          <th class="c">Indicadores — Ano</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><button class="cargo-btn" onclick="showGroup('CSM')">CSM</button></td>
+          <td class="c">4</td><td class="c">R$ 14.000</td><td class="c">3 sal</td>
+          <td class="c" style="color:var(--gray)">—</td>
+          <td style="color:var(--gray);font-size:10px">Sem módulo trimestral</td>
+          <td class="c">R$ 168.000<br><span style="font-size:9px;color:var(--gray)">(3 sal/ano)</span></td>
+          <td style="color:var(--red);font-size:10px">Não informado na proposta</td>
+        </tr>
+        <tr>
+          <td><button class="cargo-btn" onclick="showGroup('COP')">COP</button></td>
+          <td class="c">5</td><td class="c">R$ 20.500</td><td class="c">6 sal</td>
+          <td class="c">R$ 153.750<br><span style="font-size:9px;color:var(--gray)">(1,5 sal/tri)</span></td>
+          <td style="font-size:10px">EBITDA contratos atend. <strong style="color:var(--red)">67%</strong> + Fat. contratos atend. <strong style="color:var(--red)">33%</strong></td>
+          <td class="c" style="color:var(--gray)">—</td>
+          <td style="color:var(--gray);font-size:10px">Sem módulo anual</td>
+        </tr>
+        <tr>
+          <td><button class="cargo-btn" onclick="showGroup('AM')">Account Manager</button></td>
+          <td class="c">13</td><td class="c">R$ 13.177</td><td class="c">8 sal</td>
+          <td class="c">R$ 256.950<br><span style="font-size:9px;color:var(--gray)">(1,5 sal/tri)</span></td>
+          <td style="font-size:10px">Fat. global portfólio <strong style="color:var(--red)">67%</strong> + EBITDA portfólio <strong style="color:var(--red)">33%</strong></td>
+          <td class="c">R$ 342.600<br><span style="font-size:9px;color:var(--gray)">(2 sal/ano)</span></td>
+          <td style="font-size:10px">Meta Novos Contratos <strong style="color:var(--red)">100%</strong></td>
+        </tr>
+        <tr>
+          <td><button class="cargo-btn" onclick="showGroup('COPGER')">COP-Ger Exec</button></td>
+          <td class="c">1</td><td class="c">R$ 28.000</td><td class="c">8 sal</td>
+          <td class="c">R$ 42.000<br><span style="font-size:9px;color:var(--gray)">(1,5 sal/tri)</span></td>
+          <td style="font-size:10px">EBITDA contratos atend. <strong style="color:var(--red)">63%</strong> + Fat. contratos atend. <strong style="color:var(--red)">37%</strong></td>
+          <td class="c">R$ 56.000<br><span style="font-size:9px;color:var(--gray)">(2 sal/ano)</span></td>
+          <td style="color:var(--gray);font-size:10px">—</td>
+        </tr>
+        <tr>
+          <td><button class="cargo-btn" onclick="showGroup('DIR')">Dir. Comercial</button></td>
+          <td class="c">3</td><td class="c">R$ 30.433</td><td class="c">10 sal</td>
+          <td class="c">R$ 114.125<br><span style="font-size:9px;color:var(--gray)">(1,25 sal/tri)</span></td>
+          <td style="color:var(--red);font-size:10px">Não informado na proposta</td>
+          <td class="c">R$ 456.500<br><span style="font-size:9px;color:var(--gray)">(5 sal/ano)</span></td>
+          <td style="font-size:10px">Fat. <strong style="color:var(--red)">40%</strong> · EBITDA <strong style="color:var(--red)">40%</strong> · Portfólio <strong style="color:var(--red)">20%</strong></td>
+        </tr>
+        <tr>
+          <td><button class="cargo-btn" onclick="showGroup('DIREX')">Dir. Exec. Comercial</button></td>
+          <td class="c">2</td><td class="c">R$ 31.500</td><td class="c">12 sal</td>
+          <td class="c">R$ 94.500<br><span style="font-size:9px;color:var(--gray)">(1,5 sal/tri)</span></td>
+          <td style="color:var(--red);font-size:10px">Não informado na proposta</td>
+          <td class="c">R$ 378.000<br><span style="font-size:9px;color:var(--gray)">(6 sal/ano)</span></td>
+          <td style="font-size:10px">Fat. <strong style="color:var(--red)">40%</strong> · EBITDA <strong style="color:var(--red)">40%</strong> · Portfólio <strong style="color:var(--red)">20%</strong></td>
+        </tr>
+        <tr>
+          <td><button class="cargo-btn" onclick="showGroup('VP')">VP Comercial</button></td>
+          <td class="c">1</td><td class="c">R$ 45.000</td><td class="c">14 sal</td>
+          <td class="c">R$ 78.750<br><span style="font-size:9px;color:var(--gray)">(1,75 sal/tri)</span></td>
+          <td style="color:var(--red);font-size:10px">Não informado na proposta</td>
+          <td class="c">R$ 315.000<br><span style="font-size:9px;color:var(--gray)">(7 sal/ano)</span></td>
+          <td style="font-size:10px">Fat. <strong style="color:var(--red)">30%</strong> · EBITDA <strong style="color:var(--red)">40%</strong> · Portfólio <strong style="color:var(--red)">15%</strong> · NPS <strong style="color:var(--red)">15%</strong></td>
+        </tr>
+        <tr class="tr-sub">
+          <td colspan="4"><strong>Total — 29 elegíveis</strong></td>
+          <td class="c">R$ 740.075</td><td colspan="3"></td>
+        </tr>
+        <tr class="tr-sub">
+          <td colspan="6">Total módulo anual (100%)</td>
+          <td class="c">R$ 1.716.100</td><td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="g3" style="margin-top:10px;">
+      <div class="card bk"><h3>Custo anual 100%</h3><div class="big bk">R$ 4.676.400</div><p class="note" style="margin-top:3px;font-style:normal">Sem encargos</p></div>
+      <div class="card"><h3>Custo anual 200% (sem teto)</h3><div class="big">R$ 9.352.800</div><p class="note" style="margin-top:3px;font-style:normal">Sem encargos</p></div>
+      <div class="card" style="border-left-color:#888"><h3>Pico trimestral 200% (sem teto)</h3><div class="big" style="color:#888">R$ 1.480.150</div><p class="note" style="margin-top:3px;font-style:normal">Sem controle de caixa por trimestre</p></div>
+    </div>
+  </div>
+  <div class="ft"><span>Seção 03 · Cenário Base</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb10"></div></div><span id="pc10"></span></div></div>
+</div>
+
+<!-- S11: BRIDGE — DE BASE À RECOMENDAÇÃO -->
+<div class="slide" id="s11">
+  <div class="hd"><h1>De: Proposta Interna → Para: Recomendação</h1><div class="hd-right"><span class="badge gray">Lógica da Evolução</span><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd bg">
+    <div class="g2">
+      <div class="gcol">
+        <div class="st">Ponto de partida</div>
+        <div class="card bk" style="flex:1">
+          <h3>Cenário Base (Proposta Interna)</h3>
+          <ul class="bul" style="font-size:10.5px;margin-top:8px;">
+            <li><span class="ic bk">✓</span>Targets atualizados por nível (3 a 14 sal)</li>
+            <li><span class="ic bk">✓</span>Frequência trimestral introduzida</li>
+            <li><span class="ic bk">✓</span>Elegíveis ampliados: 29 profissionais</li>
+            <li><span class="ic bk">✓</span>Sem teto trimestral — exposição de caixa em picos</li>
+          </ul>
+          <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;color:rgba(255,255,255,.55)">Base consolidada. Os cinco complementos ao lado constroem a recomendação.</div>
+        </div>
+      </div>
+      <div class="gcol">
+        <div class="st">O que a Recomendação adiciona</div>
+        <ul class="bul" style="font-size:10.5px;">
+          <li style="align-items:flex-start">
+            <span class="ic rd" style="margin-top:2px;flex-shrink:0">1</span>
+            <div><strong>Split revisado por nível</strong> — parcelas trimestrais alinhadas aos múltiplos do PIE vigente; diferencial de target convertido em módulo anual independente.</div>
+          </li>
+          <li style="align-items:flex-start">
+            <span class="ic rd" style="margin-top:2px;flex-shrink:0">2</span>
+            <div><strong>Trimestral 100% individual</strong> — performance medida individualmente, não por metas coletivas; teto de 100% por trimestre para controle de caixa.</div>
+          </li>
+          <li style="align-items:flex-start">
+            <span class="ic rd" style="margin-top:2px;flex-shrink:0">3</span>
+            <div><strong>Balanço de superação</strong> — overperformance acumulada nos trimestres não é perdida: é paga no fechamento do ano, garantindo que só resultados consistentes sejam recompensados.</div>
+          </li>
+          <li style="align-items:flex-start">
+            <span class="ic rd" style="margin-top:2px;flex-shrink:0">4</span>
+            <div><strong>Bônus anual coletivo</strong> — módulo adicional atrelado ao atingimento de metas coletivas do negócio (faturamento, EBITDA, portfólio, NPS por nível).</div>
+          </li>
+          <li style="align-items:flex-start;border-bottom:none">
+            <span class="ic rd" style="margin-top:2px;flex-shrink:0">5</span>
+            <div><strong>Gatilho EBITDA ≥ 80%</strong> — balanço de superação e bônus anual só são liberados se o negócio entregar resultado. Aceleração condicionada à saúde financeira da empresa.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Seção 03 · Lógica da Evolução</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb11"></div></div><span id="pc11"></span></div></div>
+</div>
+
+<!-- S12: MODELO RECOMENDADO -->
+<div class="slide" id="s12">
+  <div class="hd"><h1>Modelo Recomendado — Teto Tri 100% + Módulo Anual (superação tri + resultados ano)</h1><div class="hd-right"><span class="badge">Recomendado</span><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd bg">
+    <div class="g2">
+      <div>
+        <div class="st">Targets por Nível</div>
+        <table class="tbl-compact" style="font-size:10.5px;table-layout:auto;width:100%;text-align:center;">
+          <thead><tr><th style="text-align:left">Grupo</th><th>Total Ano</th><th>Parcela Tri</th><th>Teto Tri</th><th>Módulo Anual</th><th>Composição</th></tr></thead>
+          <tbody>
+            <tr><td style="text-align:left">CSM</td><td>3 sal</td><td style="color:var(--gray)">— (anual)</td><td><span class="bge bge-bk">N/A</span></td><td>3 sal</td><td>0% tri / 100% anual</td></tr>
+            <tr><td style="text-align:left">COP</td><td>6 sal</td><td>1 sal/tri × 4</td><td><span class="bge bge-rd">100%/tri</span></td><td>2 sal</td><td>67% tri / 33% anual</td></tr>
+            <tr><td style="text-align:left">COP-Ger Exec</td><td>8 sal</td><td>1,5 sal/tri × 4</td><td><span class="bge bge-rd">100%/tri</span></td><td>2 sal</td><td>75% tri / 25% anual</td></tr>
+            <tr><td style="text-align:left">Account Manager</td><td>8 sal</td><td>1,5 sal/tri × 4</td><td><span class="bge bge-rd">100%/tri</span></td><td>2 sal</td><td>75% tri / 25% anual</td></tr>
+            <tr><td style="text-align:left">Dir. Coml.</td><td>10 sal</td><td>2 sal/tri × 4</td><td><span class="bge bge-rd">100%/tri</span></td><td>2 sal</td><td>80% tri / 20% anual</td></tr>
+            <tr><td style="text-align:left">Dir. Exec. Coml.</td><td>12 sal</td><td>2 sal/tri × 4</td><td><span class="bge bge-rd">100%/tri</span></td><td>4 sal</td><td>67% tri / 33% anual</td></tr>
+            <tr><td style="text-align:left">VP Coml.</td><td>14 sal</td><td>2 sal/tri × 4</td><td><span class="bge bge-rd">100%/tri</span></td><td>6 sal</td><td>57% tri / 43% anual</td></tr>
+          </tbody>
+        </table>
+        <div class="alert" style="margin-top:10px;"><strong>Gatilho EBITDA:</strong> elevado para <strong>80%</strong> (vs. 50% atual) — aplicado no módulo/balanço anual.<br><strong>CRB:</strong> ±30 pp (vs. ±50 pp atual).</div>
+      </div>
+      <div class="gcol">
+        <div class="st">Lógica do modelo</div>
+        <ul class="bul" style="font-size:12.5px;">
+          <li><span class="ic rd">1</span><div><strong>Parcela trimestral</strong> — predefinida por nível, paga em Q1–Q4. Limitada a 100% do target trimestral. Reconhecimento recorrente + previsibilidade de caixa.</div></li>
+          <li><span class="ic rd">2</span><div><strong>Módulo anual independente</strong> — apurado no fechamento do ano. Cobre o diferencial de target acima de 8 sal (incremento de mercado). <em>Condicionado ao atingimento combinado dos indicadores ≥ 80% e EBITDA ≥ 80%.</em></div></li>
+          <li><span class="ic rd">3</span><div><strong>Balanço de superação</strong> — overperformance trimestral acumulada que excedeu o teto é paga no balanço anual. Performance ruim em um tri não perde o ano. <em>Condicionado ao EBITDA ≥ 80%.</em></div></li>
+          <li><span class="ic gn">✓</span><div><strong>Argumento para os acionistas:</strong> o trimestral equivale ao que já existe hoje (8 sal ÷ 4 = 2 sal/tri). O adicional anual só é pago se o negócio bater 80% de EBITDA.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Seção 03 · Modelo Recomendado</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb12"></div></div><span id="pc12"></span></div></div>
+</div>
+
+<!-- S12: POPULAÇÃO ELEGÍVEL -->
+<div class="slide" id="s13">
+  <div class="hd"><h1>População Elegível e Estrutura de Targets</h1><div class="hd-right"><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd">
+    <div class="st">29 profissionais — Área Comercial 2026</div>
+    <table class="tbl-compact" style="font-size:11.5px;table-layout:auto;width:100%;text-align:center;">
+      <thead>
+        <tr>
+          <th style="text-align:left">Nível / Grupo</th>
+          <th>Qtd.</th>
+          <th>Sal. médio/mês</th>
+          <th>Total sal/mês</th>
+          <th>Target</th>
+          <th>Parcela Tri<br><span style="font-size:9px;font-weight:400;text-transform:none;letter-spacing:0">(custo/tri · custo/ano)</span></th>
+          <th>Módulo Anual<br><span style="font-size:9px;font-weight:400;text-transform:none;letter-spacing:0">(custo anual)</span></th>
+          <th>PIE Anual 100%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:left"><button class="cargo-btn" onclick="showGroup('CSM')">CSM</button></td>
+          <td>4</td><td>R$ 14.000</td><td>R$ 56.000</td><td>3 sal</td>
+          <td style="color:var(--gray)">—</td>
+          <td>3 sal<br><span style="font-size:9px;color:var(--gray)">R$ 168.000</span></td>
+          <td><strong>R$ 168.000</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align:left"><button class="cargo-btn" onclick="showGroup('COP')">COP</button></td>
+          <td>5</td><td>R$ 20.500</td><td>R$ 102.500</td><td>6 sal</td>
+          <td>1 sal/tri<br><span style="font-size:9px;color:var(--gray)">R$ 102.500 · R$ 410.000/ano</span></td>
+          <td>2 sal<br><span style="font-size:9px;color:var(--gray)">R$ 205.000</span></td>
+          <td><strong>R$ 615.000</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align:left"><button class="cargo-btn" onclick="showGroup('COPGER')">COP-Ger Exec</button></td>
+          <td>1</td><td>R$ 28.000</td><td>R$ 28.000</td><td>8 sal</td>
+          <td>1,5 sal/tri<br><span style="font-size:9px;color:var(--gray)">R$ 42.000 · R$ 168.000/ano</span></td>
+          <td>2 sal<br><span style="font-size:9px;color:var(--gray)">R$ 56.000</span></td>
+          <td><strong>R$ 224.000</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align:left"><button class="cargo-btn" onclick="showGroup('AM')">Account Manager</button></td>
+          <td>13</td><td>R$ 13.177</td><td>R$ 171.300</td><td>8 sal</td>
+          <td>1,5 sal/tri<br><span style="font-size:9px;color:var(--gray)">R$ 256.950 · R$ 1.027.800/ano</span></td>
+          <td>2 sal<br><span style="font-size:9px;color:var(--gray)">R$ 342.600</span></td>
+          <td><strong>R$ 1.370.400</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align:left"><button class="cargo-btn" onclick="showGroup('DIR')">Dir. Comercial</button></td>
+          <td>3</td><td>R$ 30.433</td><td>R$ 91.300</td><td>10 sal</td>
+          <td>2 sal/tri<br><span style="font-size:9px;color:var(--gray)">R$ 182.600 · R$ 730.400/ano</span></td>
+          <td>2 sal<br><span style="font-size:9px;color:var(--gray)">R$ 182.600</span></td>
+          <td><strong>R$ 913.000</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align:left"><button class="cargo-btn" onclick="showGroup('DIREX')">Dir. Exec. Coml.</button></td>
+          <td>2</td><td>R$ 31.500</td><td>R$ 63.000</td><td>12 sal</td>
+          <td>2 sal/tri<br><span style="font-size:9px;color:var(--gray)">R$ 126.000 · R$ 504.000/ano</span></td>
+          <td>4 sal<br><span style="font-size:9px;color:var(--gray)">R$ 252.000</span></td>
+          <td><strong>R$ 756.000</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align:left"><button class="cargo-btn" onclick="showGroup('VP')">VP Coml.</button></td>
+          <td>1</td><td>R$ 45.000</td><td>R$ 45.000</td><td>14 sal</td>
+          <td>2 sal/tri<br><span style="font-size:9px;color:var(--gray)">R$ 90.000 · R$ 360.000/ano</span></td>
+          <td>6 sal<br><span style="font-size:9px;color:var(--gray)">R$ 270.000</span></td>
+          <td><strong>R$ 630.000</strong></td>
+        </tr>
+        <tr class="tr-tot">
+          <td style="text-align:left"><strong>Total</strong></td>
+          <td><strong>29</strong></td><td>—</td><td>—</td><td>—</td>
+          <td><strong>R$ 800.050/tri</strong><br><span style="font-size:9px;font-weight:400">R$ 3.200.200/ano</span></td>
+          <td><strong>R$ 1.476.200</strong></td>
+          <td><strong>R$ 4.676.400</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:8px">Valores sem encargos. Sal. médio = total ÷ qtd. elegíveis no grupo. Clique no nome do cargo para ver os elegíveis.</p>
+  </div>
+  <div class="ft"><span>Seção 03 · População Elegível</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb13"></div></div><span id="pc13"></span></div></div>
+</div>
+
+<!-- S14: KPIs E LÓGICA DE CÁLCULO -->
+<div class="slide" id="s14">
+  <div class="hd"><h1>Indicadores e Lógica de Cálculo</h1><div class="hd-right"><span class="badge">Modelo Recomendado</span><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd bg" style="overflow-y:auto;display:flex;flex-direction:column;gap:14px;">
+
+    <!-- BLOCO 1: tabela de KPIs (largura total) -->
+    <div>
+      <div class="st">KPIs por Nível</div>
+      <table class="tbl-compact" style="font-size:11px;table-layout:auto;width:100%">
+        <thead>
+          <tr>
+            <th style="text-align:left;white-space:nowrap;border:1px solid var(--border)">Cargo</th>
+            <th style="text-align:left;border:1px solid var(--border)">KPIs Trimestrais</th>
+            <th style="text-align:center;border:1px solid var(--border)">KPIs Anuais</th>
+            <th style="text-align:center;white-space:nowrap;border:1px solid var(--border)">Escopo Anual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:left;white-space:nowrap;border:1px solid var(--border)">COP</td>
+            <td style="font-size:10px;border:1px solid var(--border)">EBITDA contratos atend. <strong>67%</strong> + Fat. contratos atend. <strong>33%</strong> <span class="bge bge-bk" style="font-size:9px;margin-left:4px">Individual</span></td>
+            <td rowspan="6" style="text-align:center;font-size:10px;vertical-align:middle;border:1px solid var(--border)">Fat. <strong>30%</strong> · EBITDA <strong>40%</strong><br>Portfólio <strong>15%</strong> · NPS <strong>15%</strong></td>
+            <td rowspan="6" style="text-align:center;vertical-align:middle;border:1px solid var(--border)"><span class="bge bge-rd" style="font-size:9px">VP</span></td>
+          </tr>
+          <tr>
+            <td style="text-align:left;white-space:nowrap;border:1px solid var(--border)">COP-Ger Exec</td>
+            <td style="font-size:10px;border:1px solid var(--border)">EBITDA contratos atend. <strong>63%</strong> + Fat. contratos atend. <strong>37%</strong> <span class="bge bge-bk" style="font-size:9px;margin-left:4px">Individual</span></td>
+          </tr>
+          <tr>
+            <td style="text-align:left;white-space:nowrap;border:1px solid var(--border)">Account Manager</td>
+            <td style="font-size:10px;border:1px solid var(--border)">Fat. global portfólio <strong>50%</strong> + EBITDA portfólio <strong>25%</strong> + Novos contratos <strong>25%</strong> <span class="bge bge-bk" style="font-size:9px;margin-left:4px">Individual</span></td>
+          </tr>
+          <tr>
+            <td style="text-align:left;white-space:nowrap;border:1px solid var(--border)">Dir. Comercial</td>
+            <td style="font-size:10px;border:1px solid var(--border)">Fat. <strong>40%</strong> + EBITDA <strong>40%</strong> + Portfólio <strong>20%</strong> <span class="bge" style="font-size:9px;background:#444;color:#fff;margin-left:4px">Diretoria</span></td>
+          </tr>
+          <tr>
+            <td style="text-align:left;white-space:nowrap;border:1px solid var(--border)">Dir. Exec. Coml.</td>
+            <td style="font-size:10px;border:1px solid var(--border)">Fat. <strong>40%</strong> + EBITDA <strong>40%</strong> + Portfólio <strong>20%</strong> <span class="bge" style="font-size:9px;background:#444;color:#fff;margin-left:4px">Diretoria</span></td>
+          </tr>
+          <tr>
+            <td style="text-align:left;white-space:nowrap;border:1px solid var(--border)">VP Coml.</td>
+            <td style="font-size:10px;border:1px solid var(--border)">Fat. <strong>30%</strong> + EBITDA <strong>40%</strong> + Portfólio <strong>15%</strong> + NPS <strong>15%</strong> <span class="bge bge-rd" style="font-size:9px;margin-left:4px">VP</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note" style="margin-top:6px">CSM: papel em redefinição interna — KPIs a definir.</p>
+    </div>
+
+    <!-- BLOCO 2: lógica + exemplo (lado a lado, largura total) -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;">
+
+      <!-- Lógica em 3 blocos -->
+      <div>
+        <div class="st">Lógica de Cálculo</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+          <div style="background:var(--white);border:1px solid var(--border);border-top:3px solid var(--red);border-radius:6px;padding:10px;">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--red);margin-bottom:6px">① Trimestral</div>
+            <ul style="margin:0;padding-left:14px;font-size:10.5px;line-height:1.6;color:var(--dark)">
+              <li>Gatilho: ating. <strong>≥ 80%</strong></li>
+              <li>Paga: ating% × tri_target</li>
+              <li>Teto: <strong>100%/tri</strong></li>
+            </ul>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--border);border-top:3px solid #2980b9;border-radius:6px;padding:10px;">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#2980b9;margin-bottom:6px">② Balanço Anual</div>
+            <ul style="margin:0;padding-left:14px;font-size:10.5px;line-height:1.6;color:var(--dark)">
+              <li>Média = (Q1+Q2+Q3+Q4)÷4</li>
+              <li>Se média <strong>&lt; 80%</strong>: zero</li>
+              <li>Se <strong>≥ 80%</strong>: curva×4×tri_target subtraindo o que já foi pago <em>(limitado a 200%)</em></li>
+              <li style="color:var(--gray);font-style:italic">Cond.: EBITDA ≥ 80%</li>
+            </ul>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--border);border-top:3px solid #27ae60;border-radius:6px;padding:10px;">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#27ae60;margin-bottom:6px">③ Módulo Anual</div>
+            <ul style="margin:0;padding-left:14px;font-size:10.5px;line-height:1.6;color:var(--dark)">
+              <li>Resultado coletivo (VP)</li>
+              <li>Se módulo <strong>&lt; 80%</strong>: zero</li>
+              <li>Se <strong>≥ 80%</strong>: % ating. <em>(limitado a 200%)</em> × anual_target</li>
+              <li>Calibrado pelo <strong>CRB ±30%</strong></li>
+              <li style="color:var(--gray);font-style:italic">Cond.: indicadores ≥ 80% <strong>e</strong> EBITDA ≥ 80%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exemplo numérico -->
+      <div>
+        <div class="st">Exemplo — Account Manager<br><span style="font-size:11px;font-weight:400;text-transform:none;letter-spacing:0">(sal. hipotético R$&nbsp;10.000)</span><br><span style="font-size:10px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--gray)">Alvo por tri = 1,5 sal<br>Alvo do Mód. Anual = 2 sal</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:10px;font-size:10.5px;">
+            <div style="font-weight:700;margin-bottom:6px;color:var(--red)">Trimestres (tri_target = R$&nbsp;15.000/tri)</div>
+            <table style="width:100%;border-collapse:collapse;font-size:10px;">
+              <thead><tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:2px 4px">Q</th><th style="text-align:center;padding:2px 4px">Ating.</th><th style="text-align:right;padding:2px 4px">Pago</th><th style="text-align:left;padding:2px 4px;color:var(--gray)">Obs</th></tr></thead>
+              <tbody>
+                <tr><td style="padding:2px 4px">Q1</td><td style="text-align:center;padding:2px 4px">90%</td><td style="text-align:right;padding:2px 4px">R$&nbsp;13.500</td><td style="padding:2px 4px;color:var(--gray)">—</td></tr>
+                <tr><td style="padding:2px 4px">Q2</td><td style="text-align:center;padding:2px 4px">130%</td><td style="text-align:right;padding:2px 4px">R$&nbsp;15.000</td><td style="padding:2px 4px;color:#2980b9;font-style:italic">teto → excesso vai ao balanço</td></tr>
+                <tr><td style="padding:2px 4px">Q3</td><td style="text-align:center;padding:2px 4px" style="color:var(--red)"><strong style="color:var(--red)">70%</strong></td><td style="text-align:right;padding:2px 4px;color:var(--red)">R$&nbsp;0</td><td style="padding:2px 4px;color:var(--red);font-style:italic">abaixo do gatilho</td></tr>
+                <tr><td style="padding:2px 4px">Q4</td><td style="text-align:center;padding:2px 4px">110%</td><td style="text-align:right;padding:2px 4px">R$&nbsp;15.000</td><td style="padding:2px 4px;color:#2980b9;font-style:italic">teto → excesso vai ao balanço</td></tr>
+                <tr style="border-top:1px solid var(--border);font-weight:700"><td style="padding:3px 4px">Total</td><td></td><td style="text-align:right;padding:3px 4px">R$&nbsp;43.500</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:10px;font-size:10.5px;display:flex;flex-direction:column;gap:8px;">
+            <div>
+              <div style="font-weight:700;color:#2980b9;margin-bottom:4px">Balanço Anual</div>
+              <div style="font-size:10px;line-height:1.6">
+                Média: (90+130+70+110)÷4 = <strong>100%</strong><br>
+                Curva: 100% × R$&nbsp;60.000 = R$&nbsp;60.000<br>
+                Balanço: R$&nbsp;60.000 − R$&nbsp;43.500 = <strong style="color:#2980b9">R$&nbsp;16.500</strong><br>
+                <span style="color:var(--gray);font-style:italic">Q3 perdido nos tris é recuperado no balanço</span>
+              </div>
+            </div>
+            <div>
+              <div style="font-weight:700;color:#27ae60;margin-bottom:4px">Módulo Anual (ating. 95% · CRB 110%)</div>
+              <div style="font-size:10px;line-height:1.6">95% × R$&nbsp;20.000 × 110% = <strong style="color:#27ae60">R$&nbsp;20.900</strong></div>
+            </div>
+            <div style="background:var(--light);border-radius:4px;padding:8px;margin-top:auto">
+              <div style="display:flex;justify-content:space-between;font-size:11px"><span>Trimestres</span><span>R$&nbsp;43.500</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px"><span>Balanço anual</span><span style="color:#2980b9">R$&nbsp;16.500</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px"><span>Módulo anual</span><span style="color:#27ae60">R$&nbsp;20.900</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:800;border-top:1px solid var(--border);margin-top:6px;padding-top:6px"><span>Total</span><span style="color:var(--red)">R$&nbsp;80.900</span></div>
+              <div style="font-size:9px;color:var(--gray);margin-top:3px;text-align:right">= 8,09 salários vs. target 8 sal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="ft"><span>Seção 03 · KPIs e Cálculo</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb14"></div></div><span id="pc14"></span></div></div>
+</div>
+
+<!-- S13: DIV SEC 04 -->
+<div class="slide" id="s15">
+  <div class="sec-div" style="flex:1">
+    <div class="sec-n">04</div>
+    <div class="sec-lbl">Seção 04</div>
+    <h2>Simulação<br>de Custos</h2>
+  </div>
+</div>
+
+<!-- S14: CUSTO COLETIVO -->
+<div class="slide" id="s16">
+  <div class="hd"><h1>Custo Coletivo — 100% e 200% de Atingimento</h1><div class="hd-right"><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd">
+    <div class="g2">
+      <div>
+        <div class="st">Atingimento 100%</div>
+        <table style="font-size:10.5px;">
+          <thead><tr><th>Grupo</th><th class="r">Por trimestre</th><th class="r">×4 tri</th><th class="r">Módulo anual</th><th class="r">Total</th></tr></thead>
+          <tbody>
+            <tr><td>CSM</td><td class="r" style="color:var(--gray)">—</td><td class="r" style="color:var(--gray)">—</td><td class="r">R$ 168.000</td><td class="r">R$ 168.000</td></tr>
+            <tr><td>COP</td><td class="r">R$ 102.500</td><td class="r">R$ 410.000</td><td class="r">R$ 205.000</td><td class="r">R$ 615.000</td></tr>
+            <tr><td>COP-Ger Exec</td><td class="r">R$ 42.000</td><td class="r">R$ 168.000</td><td class="r">R$ 56.000</td><td class="r">R$ 224.000</td></tr>
+            <tr><td>AM</td><td class="r">R$ 256.950</td><td class="r">R$ 1.027.800</td><td class="r">R$ 342.600</td><td class="r">R$ 1.370.400</td></tr>
+            <tr><td>Dir. Comercial</td><td class="r">R$ 182.600</td><td class="r">R$ 730.400</td><td class="r">R$ 182.600</td><td class="r">R$ 913.000</td></tr>
+            <tr><td>Dir. Exec.</td><td class="r">R$ 126.000</td><td class="r">R$ 504.000</td><td class="r">R$ 252.000</td><td class="r">R$ 756.000</td></tr>
+            <tr><td>VP</td><td class="r">R$ 90.000</td><td class="r">R$ 360.000</td><td class="r">R$ 270.000</td><td class="r">R$ 630.000</td></tr>
+            <tr class="tr-sub"><td><strong>Total</strong></td><td class="r"><strong>R$ 800.050</strong></td><td class="r"><strong>R$ 3.200.200</strong></td><td class="r"><strong>R$ 1.476.200</strong></td><td class="r"><strong>R$ 4.676.400</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="alert" style="margin-top:8px"><strong>Pico máximo trimestral (teto):</strong> R$ 800.050 — controlado pelo cap de 100% por tri.</div>
+      </div>
+      <div>
+        <div class="st">Atingimento 200%</div>
+        <table style="font-size:10.5px;">
+          <thead><tr><th>Grupo</th><th class="r">Tri (teto)</th><th class="r">×4 tri</th><th class="r">Balanço/Módulo anual</th><th class="r">Total</th></tr></thead>
+          <tbody>
+            <tr><td>CSM</td><td class="r" style="color:var(--gray)">—</td><td class="r" style="color:var(--gray)">—</td><td class="r" style="color:var(--red)">R$ 336.000</td><td class="r">R$ 336.000</td></tr>
+            <tr><td>COP</td><td class="r">R$ 102.500</td><td class="r">R$ 410.000</td><td class="r" style="color:var(--red)">R$ 820.000</td><td class="r">R$ 1.230.000</td></tr>
+            <tr><td>COP-Ger Exec</td><td class="r">R$ 42.000</td><td class="r">R$ 168.000</td><td class="r" style="color:var(--red)">R$ 280.000</td><td class="r">R$ 448.000</td></tr>
+            <tr><td>AM</td><td class="r">R$ 256.950</td><td class="r">R$ 1.027.800</td><td class="r" style="color:var(--red)">R$ 1.713.000</td><td class="r">R$ 2.740.800</td></tr>
+            <tr><td>Dir. Comercial</td><td class="r">R$ 182.600</td><td class="r">R$ 730.400</td><td class="r" style="color:var(--red)">R$ 1.095.600</td><td class="r">R$ 1.826.000</td></tr>
+            <tr><td>Dir. Exec.</td><td class="r">R$ 126.000</td><td class="r">R$ 504.000</td><td class="r" style="color:var(--red)">R$ 1.008.000</td><td class="r">R$ 1.512.000</td></tr>
+            <tr><td>VP</td><td class="r">R$ 90.000</td><td class="r">R$ 360.000</td><td class="r" style="color:var(--red)">R$ 900.000</td><td class="r">R$ 1.260.000</td></tr>
+            <tr class="tr-sub"><td><strong>Total</strong></td><td class="r"><strong>R$ 800.050</strong></td><td class="r"><strong>R$ 3.200.200</strong></td><td class="r" style="color:var(--red)"><strong>R$ 6.152.600</strong></td><td class="r"><strong>R$ 9.352.800</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="alert" style="margin-top:8px;border-left-color:var(--blue);background:#EEF3FA;color:var(--dark)"><strong style="color:var(--blue)">Proteção de caixa:</strong> pico trimestral mantido em R$ 800k mesmo a 200%. Toda a aceleração vai para o balanço anual.</div>
+        <p class="note" style="margin-top:6px">Todos os valores sem encargos.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Seção 04 · Custo Coletivo</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb16"></div></div><span id="pc16"></span></div></div>
+</div>
+
+<!-- S15: SIMULADOR INDIVIDUAL -->
+<div class="slide" id="s17">
+  <div class="hd"><h1>Simulador Individual de Ganho</h1><div class="hd-right"><span class="badge">Interativo</span><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd bg">
+    <div class="g2" style="gap:16px;align-items:start;">
+      <div class="sim-box">
+        <h4>Parâmetros</h4>
+        <div class="g2" style="gap:10px;margin-bottom:12px;">
+          <div>
+            <label class="sim-label">Nível</label>
+            <select id="sim-nivel" class="sim-input" onchange="simPreencheSal();calcSim()">
+              <option value="CSM">CSM</option>
+              <option value="COP">COP</option>
+              <option value="COP-Ger">COP-Ger Exec</option>
+              <option value="AM" selected>Account Manager</option>
+              <option value="DIR">Dir. Comercial</option>
+              <option value="DIREX">Dir. Exec. Coml.</option>
+              <option value="VP">VP Comercial</option>
+            </select>
+          </div>
+          <div>
+            <label class="sim-label">Salário mensal (R$)</label>
+            <input type="number" id="sim-sal" class="sim-input" value="13177" min="1000" step="100" oninput="calcSim()">
+          </div>
+        </div>
+        <div id="sim-targets" style="display:flex;gap:8px;margin-bottom:12px;"></div>
+        <div class="sim-q">
+          <div><label class="sim-label">Q1 ating. %</label><input type="number" id="sim-q1" class="sim-input" value="80" min="0" max="250" oninput="calcSim()"></div>
+          <div><label class="sim-label">Q2 ating. %</label><input type="number" id="sim-q2" class="sim-input" value="100" min="0" max="250" oninput="calcSim()"></div>
+          <div><label class="sim-label">Q3 ating. %</label><input type="number" id="sim-q3" class="sim-input" value="120" min="0" max="250" oninput="calcSim()"></div>
+          <div><label class="sim-label">Q4 ating. %</label><input type="number" id="sim-q4" class="sim-input" value="110" min="0" max="250" oninput="calcSim()"></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;">
+          <div style="flex:1;min-width:0;">
+            <label class="sim-label">Ating. coletivo — Mód. Anual % <span style="font-weight:400;color:var(--gray)">(resultado VP)</span></label>
+            <input type="number" id="sim-qann" class="sim-input" value="100" min="0" max="250" oninput="calcSim()">
+          </div>
+          <div style="flex:1;min-width:0;">
+            <label class="sim-label">CRB — avaliação individual <span style="font-weight:400;color:var(--gray)">(70%–130%)</span></label>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <input type="range" id="sim-crb" min="70" max="130" value="100" step="5" oninput="document.getElementById('sim-crb-val').textContent=this.value+'%';calcSim()" style="flex:1;accent-color:var(--red);">
+              <span id="sim-crb-val" style="font-size:13px;font-weight:700;color:var(--red);min-width:36px">100%</span>
+            </div>
+          </div>
+        </div>
+        <p class="note" style="margin-top:-4px;margin-bottom:10px;">A média Q1–Q4 determina o balanço de superação. O atingimento coletivo e o CRB afetam apenas o módulo anual.</p>
+        <div style="display:flex;align-items:center;gap:8px;background:var(--white);padding:8px 10px;border-radius:6px;border:1px solid var(--border);">
+          <input type="checkbox" id="sim-ebitda" checked onchange="calcSim()" style="width:15px;height:15px;accent-color:var(--red);cursor:pointer;flex-shrink:0;">
+          <label for="sim-ebitda" style="font-size:10.5px;font-weight:600;color:var(--dark);cursor:pointer;">EBITDA ≥ 80% atingido? <span style="font-weight:400;color:var(--gray)">(libera o balanço anual e, junto com indicadores ≥ 80%, o módulo anual)</span></label>
+        </div>
+      </div>
+      <div class="sim-box">
+        <h4>Resultado do Colaborador</h4>
+        <div id="sim-qrows" style="margin-bottom:6px;"></div>
+        <div style="background:var(--light);border-radius:6px;padding:12px;margin-top:8px;">
+          <div class="sim-out-row"><span class="sim-out-lbl">Total pago nos trimestres</span><span class="sim-out-val" id="out-tri-tot">—</span></div>
+          <div class="sim-out-row"><span class="sim-out-lbl" id="lbl-balanco">Balanço de superação</span><span class="sim-out-val" id="out-balanco">—</span></div>
+          <div class="sim-out-row"><span class="sim-out-lbl">Módulo anual</span><span class="sim-out-val" id="out-modulo">—</span></div>
+          <div class="sim-out-row" style="border-top:2px solid var(--border);padding-top:10px;margin-top:4px;border-bottom:none;">
+            <span style="font-weight:700;font-size:14px;">Total anual</span>
+            <span id="out-total" style="font-size:20px;font-weight:800;color:var(--red)">—</span>
+          </div>
+          <div class="sim-out-row" style="border-bottom:none;"><span class="sim-out-lbl">Em múltiplos de salário</span><span class="sim-out-val" id="out-mult">—</span></div>
+          <div class="sim-out-row" style="border-bottom:none;"><span class="sim-out-lbl">Atingimento médio Q1–Q4<br><span style="font-weight:400;font-size:9px;color:var(--gray)">(limitado a 200%)</span></span><span class="sim-out-val" id="out-avg">—</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Seção 04 · Simulador Individual</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb17"></div></div><span id="pc17"></span></div></div>
+</div>
+
+<!-- S16: RECOMENDAÇÃO -->
+<div class="slide" id="s18">
+  <div class="hd"><h1>Recomendação e Próximos Passos</h1><div class="hd-right"><div class="hd-logo"><div class="hd-x"></div><div class="hd-name"><strong>EXTREME</strong> GROUP</div></div></div></div>
+  <div class="bd">
+    <div class="g2">
+      <div>
+        <div class="st">Modelo recomendado</div>
+        <div class="card" style="margin-bottom:10px;">
+          <h3>Adotar a Recomendação: Teto Trimestral + Bônus Anual</h3>
+          <ul class="bul" style="font-size:10.5px;">
+            <li><span class="ic rd">✓</span>Parcela trimestral por nível, limitada a 100% → previsibilidade de caixa + reconhecimento recorrente</li>
+            <li><span class="ic rd">✓</span>Módulo anual independente → aceleração concentrada no fechamento, condicionada ao EBITDA</li>
+            <li><span class="ic rd">✓</span>Balanço anual → superação trimestral paga ao final; performance ruim em um tri não "perde o ano"</li>
+            <li><span class="ic rd">✓</span>Gatilho EBITDA 80% → adicional anual só é pago se o negócio trouxer resultado</li>
+            <li><span class="ic rd">✓</span>CRB reduzido de ±50 pp para ±30 pp → menos dispersão injustificada</li>
+          </ul>
+        </div>
+        <div class="card bk">
+          <h3>Argumento para aprovação</h3>
+          <p style="font-size:10.5px;">O trimestral equivale ao que os executivos já têm hoje (8 sal ÷ 4). O adicional anual só é liberado se o EBITDA bater 80%. Custo mensal incremental é pequeno — impacto maior vem no anual e depende do resultado do negócio.</p>
+        </div>
+      </div>
+      <div>
+        <div class="st">Próximos passos</div>
+        <ul class="bul">
+          <li><span class="ic bk">1</span>Validar split tri/anual</li>
+          <li><span class="ic bk">2</span>Definir indicadores e pesos por grupo (EBITDA contrato, fat. portfólio, NPS)</li>
+          <li><span class="ic bk">3</span>Confirmar se gatilho EBITDA 80% é global ou por BU</li>
+          <li><span class="ic bk">4</span>Apresentar ao Rabello (semana de 24/mar) — CEO, validar modelo</li>
+          <li><span class="ic bk">5</span>Apresentar ao Márcio (semana de 31/mar) — Acionista, modelo completo</li>
+          <li><span class="ic bk">6</span>Redigir norma do PIE Comercial</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Recomendação</span><div class="pb-wrap"><div class="pb"><div class="pb-fill" id="pb18"></div></div><span id="pc18"></span></div></div>
+</div>
+
+<!-- APÊNDICE — modal popup -->
+<div class="modal-ov" id="modal-ap-ov" onclick="if(event.target===this)closeApendice()">
+  <div class="modal-card" style="max-width:820px;">
+    <div class="modal-hd">
+      <div><h3>Apêndice — Comissionamento vs. Atingimento de Metas</h3></div>
+      <button class="modal-close" onclick="closeApendice()">×</button>
+    </div>
+    <table style="font-size:11.5px;width:100%;table-layout:fixed;">
+      <colgroup><col style="width:24%"><col style="width:38%"><col style="width:38%"></colgroup>
+      <thead>
+        <tr>
+          <th style="text-align:left">Dimensão</th>
+          <th style="text-align:left;border-left:2px solid var(--border)">Comissionamento Direto</th>
+          <th style="text-align:left;border-left:2px solid var(--border)">Atingimento de Metas (PIE)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mecânica</td>
+          <td style="border-left:2px solid var(--border)">% sobre receita ou contrato fechado</td>
+          <td style="border-left:2px solid var(--border)">% do target (em salários) se meta atingida</td>
+        </tr>
+        <tr>
+          <td>Oportunidade de ganho</td>
+          <td style="border-left:2px solid var(--border);color:var(--green)"><strong>Alta</strong> — proporcional à venda, sem teto</td>
+          <td style="border-left:2px solid var(--border);color:var(--red)">Limitada a 200% do target</td>
+        </tr>
+        <tr>
+          <td>Simplicidade para o vendedor</td>
+          <td style="border-left:2px solid var(--border);color:var(--green)"><strong>Alta</strong> — relação direta venda↔ganho</td>
+          <td style="border-left:2px solid var(--border);color:var(--red)">Moderada — depende de indicadores e pesos</td>
+        </tr>
+        <tr>
+          <td>Conexão com crescimento do negócio</td>
+          <td style="border-left:2px solid var(--border);color:var(--green)"><strong>Direta</strong> — mais receita = mais ganho imediato</td>
+          <td style="border-left:2px solid var(--border);color:var(--red)">Indireta — via metas e indicadores compostos</td>
+        </tr>
+        <tr>
+          <td>Previsibilidade de custo (empresa)</td>
+          <td style="border-left:2px solid var(--border);color:var(--red)">Baixa — varia com o volume de vendas</td>
+          <td style="border-left:2px solid var(--border);color:var(--green)"><strong>Alta</strong> — target fixo por nível</td>
+        </tr>
+        <tr>
+          <td>Conexão com resultado coletivo</td>
+          <td style="border-left:2px solid var(--border);color:var(--red)">Fraca — incentivo exclusivamente individual</td>
+          <td style="border-left:2px solid var(--border);color:var(--green)"><strong>Forte</strong> — gatilho EBITDA alinha ao negócio</td>
+        </tr>
+        <tr>
+          <td>Qualidade da venda / margem</td>
+          <td style="border-left:2px solid var(--border);color:var(--red)">Risco alto — incentivo ao volume sem margem</td>
+          <td style="border-left:2px solid var(--border);color:var(--green)"><strong>Menor risco</strong> — equilíbrio volume/margem</td>
+        </tr>
+        <tr>
+          <td>Gatilho de lucratividade</td>
+          <td style="border-left:2px solid var(--border);color:var(--red)">Difícil de aplicar sem distorções</td>
+          <td style="border-left:2px solid var(--border);color:var(--green)"><strong>Natural</strong> — EBITDA como condição de pagamento</td>
+        </tr>
+        <tr>
+          <td>Adequação a portfólio complexo</td>
+          <td style="border-left:2px solid var(--border);color:var(--red)">Baixa — simplifica demais contratos longos</td>
+          <td style="border-left:2px solid var(--border);color:var(--green)"><strong>Alta</strong> — suporta gestão de relacionamento</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="alert" style="margin-top:14px;border-left-color:var(--blue);background:#EEF3FA;color:var(--dark)">
+      <strong style="color:var(--blue)">Por que metas e não comissão para a Extreme?</strong> A comissão tem vantagens reais — especialmente em oportunidade de ganho e simplicidade. A escolha pelo modelo de metas reflete o contexto específico: contratos de setor público com receita concentrada em Q3/Q4 tornariam o custo imprevisível, e a gestão de portfólio de contas exige comportamentos além do volume. O gatilho de EBITDA garante que o incentivo só é pago quando o negócio tem saúde para suportá-lo.
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="modal-ov" id="modal-ov" onclick="if(event.target===this)closeModal()">
+  <div class="modal-card">
+    <div class="modal-hd">
+      <div><h3 id="modal-titulo"></h3></div>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<div class="nav">
+  <button id="btn-prev" onclick="go(-1)">← Anterior</button>
+  <div class="dots" id="dots"></div>
+  <div style="display:flex;gap:8px;align-items:center;">
+    <button class="btn-pdf" onclick="exportPDF()">⬇ Exportar PDF</button>
+    <button id="btn-next" onclick="go(1)">Próximo →</button>
+  </div>
+</div>
+
+<script>
+var cur=1, tot=18;
+
+var NIVEIS={
+  'CSM':   {avgSal:14000, target:3,  tri:0,   ann:3},
+  'COP':   {avgSal:20500, target:6,  tri:1,   ann:2},
+  'COP-Ger':{avgSal:28000,target:8,  tri:1.5, ann:2},
+  'AM':    {avgSal:13177, target:8,  tri:1.5, ann:2},
+  'DIR':   {avgSal:30433, target:10, tri:2,   ann:2},
+  'DIREX': {avgSal:31500, target:12, tri:2,   ann:4},
+  'VP':    {avgSal:45000, target:14, tri:2,   ann:6}
+};
+
+function fmtR(n){return 'R$ '+Math.round(n).toLocaleString('pt-BR');}
+
+function simPreencheSal(){
+  var nv=document.getElementById('sim-nivel').value;
+  document.getElementById('sim-sal').value=NIVEIS[nv].avgSal;
+  simAtualizaTargets();
+}
+
+function simAtualizaTargets(){
+  var nv=document.getElementById('sim-nivel').value;
+  var cfg=NIVEIS[nv];
+  var sal=parseFloat(document.getElementById('sim-sal').value)||cfg.avgSal;
+  var triLabel=cfg.tri>0?cfg.tri+' sal/tri (R$&nbsp;'+Math.round(cfg.tri*sal).toLocaleString('pt-BR')+'/tri)':'— (sem parcela tri)';
+  var annLabel=cfg.ann>0?cfg.ann+' sal (R$&nbsp;'+Math.round(cfg.ann*sal).toLocaleString('pt-BR')+')':'— (sem módulo anual)';
+  document.getElementById('sim-targets').innerHTML=
+    '<div style="flex:1;background:var(--white);border:1px solid var(--border);border-top:3px solid var(--red);border-radius:6px;padding:7px 10px;font-size:10.5px;">'
+    +'<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--red);margin-bottom:3px">Alvo Trimestral</div>'
+    +'<div style="font-weight:600">'+triLabel+'</div>'
+    +'</div>'
+    +'<div style="flex:1;background:var(--white);border:1px solid var(--border);border-top:3px solid #27ae60;border-radius:6px;padding:7px 10px;font-size:10.5px;">'
+    +'<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#27ae60;margin-bottom:3px">Alvo Módulo Anual</div>'
+    +'<div style="font-weight:600">'+annLabel+'</div>'
+    +'</div>';
+}
+
+function calcSim(){
+  simAtualizaTargets();
+  var nv=document.getElementById('sim-nivel').value;
+  var cfg=NIVEIS[nv];
+  var sal=parseFloat(document.getElementById('sim-sal').value)||cfg.avgSal;
+  var qs=[1,2,3,4].map(function(i){return parseFloat(document.getElementById('sim-q'+i).value)||0;});
+  var qann=parseFloat(document.getElementById('sim-qann').value)||0;
+  var crb=parseFloat(document.getElementById('sim-crb').value)||100;
+  var ebitda=document.getElementById('sim-ebitda').checked;
+
+  // --- Trimestral ---
+  var triTotal=0;
+  var rows='';
+  qs.forEach(function(pct,i){
+    var paid=0;
+    if(pct>=80 && cfg.tri>0){
+      paid=Math.min(pct/100,1.0)*cfg.tri*sal;
+    }
+    triTotal+=paid;
+    var badge='';
+    if(cfg.tri===0){badge='<span class="bge bge-bk">anual</span>';}
+    else if(pct<80){badge='<span class="bge bge-bk">abaixo gatilho</span>';}
+    else if(pct>100){badge='<span class="bge bge-gn" style="background:#2980b9;color:#fff">teto aplicado</span>';}
+    rows+='<div class="sim-out-row"><span class="sim-out-lbl">Q'+(i+1)+' ('+pct+'%) '+badge+'</span><span class="sim-out-val">'+(cfg.tri===0?'<span style="color:var(--gray)">—</span>':(paid>0?fmtR(paid):'<span class="sim-out-val gy">Zero</span>'))+'</span></div>';
+  });
+  document.getElementById('sim-qrows').innerHTML=rows;
+  document.getElementById('out-tri-tot').textContent=cfg.tri===0?'— (modelo anual)':fmtR(triTotal);
+
+  // --- Média Q1-Q4 ---
+  var avg=qs.reduce(function(a,b){return a+b},0)/4;
+  document.getElementById('out-avg').textContent=avg.toFixed(1).replace('.',',')+'%';
+
+  // --- Balanço de superação ---
+  var balEl=document.getElementById('out-balanco');
+  var lblBal=document.getElementById('lbl-balanco');
+  var balanco=0;
+  if(cfg.tri===0){
+    lblBal.textContent='Balanço de superação';
+    balEl.textContent='N/A (sem parcela trimestral)';
+    balEl.className='sim-out-val gy';
+  } else if(!ebitda){
+    lblBal.textContent='Balanço de superação';
+    balEl.textContent='EBITDA não atingido';
+    balEl.className='sim-out-val gy';
+  } else if(avg<80){
+    lblBal.innerHTML='Balanço de superação <span class="bge bge-bk">abaixo gatilho</span>';
+    balEl.textContent='Zero — média '+avg.toFixed(1)+'% < 80%';
+    balEl.className='sim-out-val gy';
+  } else {
+    var annCurve=Math.min(avg/100,2.0)*cfg.tri*4*sal;
+    balanco=Math.max(0, annCurve-triTotal);
+    var tetoBal=avg>200;
+    lblBal.innerHTML='Balanço de superação'+(tetoBal?' <span class="bge bge-gn" style="background:#2980b9;color:#fff">teto aplicado</span>':'');
+    balEl.textContent=fmtR(balanco)+' (média '+avg.toFixed(1)+'%)';
+    balEl.className='sim-out-val gn';
+  }
+
+  // --- Módulo anual ---
+  var modEl=document.getElementById('out-modulo');
+  var modulo=0;
+  if(cfg.ann===0){
+    modEl.textContent='N/A (sem módulo anual)';
+    modEl.className='sim-out-val gy';
+  } else if(!ebitda){
+    modEl.textContent='EBITDA não atingido';
+    modEl.className='sim-out-val gy';
+  } else if(qann<80){
+    modEl.textContent='Zero — ating. '+qann+'% < 80%';
+    modEl.className='sim-out-val gy';
+  } else {
+    modulo=Math.min(qann/100,2.0)*cfg.ann*sal*(crb/100);
+    modEl.textContent=fmtR(modulo)+' (ating. '+qann+'%, CRB '+crb+'%)';
+    modEl.className='sim-out-val gn';
+  }
+
+  var total=triTotal+balanco+modulo;
+  document.getElementById('out-total').textContent=fmtR(total);
+  document.getElementById('out-mult').textContent=sal>0?(total/sal).toFixed(2).replace('.',',')+'× sal':'—';
+}
+
+function buildDots(){
+  var d=document.getElementById('dots'); d.innerHTML='';
+  for(var i=1;i<=tot;i++){
+    var el=document.createElement('div');
+    el.className='dot'+(i===cur?' on':'');
+    el.setAttribute('data-n',i);
+    el.onclick=function(){goTo(parseInt(this.getAttribute('data-n')));};
+    d.appendChild(el);
+  }
+}
+
+function goTo(n){
+  if(n<1||n>tot)return;
+  document.getElementById('s'+cur).classList.remove('on');
+  cur=n;
+  document.getElementById('s'+cur).classList.add('on');
+  document.getElementById('btn-prev').disabled=(cur===1);
+  document.getElementById('btn-next').disabled=(cur===tot);
+  buildDots();
+  var pct=Math.round((cur/tot)*100);
+  var pb=document.getElementById('pb'+cur);
+  if(pb){pb.style.width=pct+'%';}
+  var pc=document.getElementById('pc'+cur);
+  if(pc){pc.textContent=cur+' / '+tot;}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function go(d){if(cur+d>=1&&cur+d<=tot)goTo(cur+d);}
+function exportPDF(){
+  // Mostrar todos os slides temporariamente para impressão
+  for(var i=1;i<=tot;i++){
+    var s=document.getElementById('s'+i);
+    if(s)s.classList.add('on');
+  }
+  window.print();
+  // Restaurar após o diálogo de impressão fechar
+  window.addEventListener('afterprint',function(){
+    for(var i=1;i<=tot;i++){
+      var s=document.getElementById('s'+i);
+      if(s&&i!==cur)s.classList.remove('on');
+    }
+  },{once:true});
+}
+
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){go(1);e.preventDefault();}
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){go(-1);e.preventDefault();}
+});
+
+var GRUPOS_EL={
+  'CSM':{titulo:'Customer Success Manager',pessoas:[
+    {nome:'Cecilia de A. R. Chiarini',funcao:'Customer Success Manager',sal:'R$ 14.000'},
+    {nome:'Eduardo Pinto Barradas',funcao:'Customer Success Manager',sal:'R$ 8.000'},
+    {nome:'Gleisson F. de Farias',funcao:'Customer Success Manager',sal:'R$ 20.000'},
+    {nome:'Wester Abrantes Martins',funcao:'Customer Success Manager',sal:'R$ 14.000'}
+  ]},
+  'COP':{titulo:'COP — Contract Operations',pessoas:[
+    {nome:'Roberto Rizik M. da Silva',funcao:'Contract Lifecycle Manager',sal:'R$ 16.500'},
+    {nome:'Alexandre Lima Coelho',funcao:'COP',sal:'R$ 24.000'},
+    {nome:'Aline Solange Pereira',funcao:'COP',sal:'R$ 14.000'},
+    {nome:'Eduardo A. L. Felippe',funcao:'COP',sal:'R$ 24.000'},
+    {nome:'TBH — Ricardo Cristiano',funcao:'COP',sal:'R$ 24.000'}
+  ]},
+  'COPGER':{titulo:'COP — Ger. Executivo',pessoas:[
+    {nome:'Fernando Vieira Novais',funcao:'Ger. Executivo de COP',sal:'R$ 28.000'}
+  ]},
+  'AM':{titulo:'Account Manager',pessoas:[
+    {nome:'Cristiano de M. Souza',funcao:'Account Manager',sal:'R$ 13.200'},
+    {nome:'Felipe L. D. Padua',funcao:'Account Manager',sal:'R$ 12.000'},
+    {nome:'Felipe P. Lorenzo',funcao:'Account Manager',sal:'R$ 8.300'},
+    {nome:'Ingrid M. dos Santos',funcao:'Account Manager',sal:'R$ 8.300'},
+    {nome:'Lucio S. Andrade Junior',funcao:'Account Manager',sal:'R$ 8.300'},
+    {nome:'Luis Carlos S. de Sousa',funcao:'Account Manager',sal:'R$ 11.000'},
+    {nome:'Maiara R. dos S. Bezerra',funcao:'Account Manager',sal:'R$ 8.300'},
+    {nome:'Paula M. M. Palacios',funcao:'Account Manager',sal:'R$ 24.000'},
+    {nome:'Pedro A. T. C. de Castro',funcao:'Account Manager',sal:'R$ 22.000'},
+    {nome:'Tamy de A. Kobayashi',funcao:'Account Manager',sal:'R$ 18.600'},
+    {nome:'Thais F. C. Borges',funcao:'Account Manager',sal:'R$ 8.300'},
+    {nome:'William M. Cardoso',funcao:'Account Manager',sal:'R$ 13.000'},
+    {nome:'Karen Mussi Peixoto',funcao:'Gerente de Projetos II',sal:'R$ 16.000'}
+  ]},
+  'DIR':{titulo:'Dir. Comercial',pessoas:[
+    {nome:'Sergio Viana Gonçalves',funcao:'Account Director',sal:'R$ 31.300'},
+    {nome:'Aline Ferreira Panao',funcao:'Diretor',sal:'R$ 25.000'},
+    {nome:'Eduardo de A. Alarcão',funcao:'Diretor Comercial',sal:'R$ 35.000'}
+  ]},
+  'DIREX':{titulo:'Dir. Exec. Comercial',pessoas:[
+    {nome:'Rodrigo de S. C. Leite',funcao:'Diretor Comercial',sal:'R$ 30.000'},
+    {nome:'Victor L. G. Estelles',funcao:'Diretor Comercial',sal:'R$ 33.000'}
+  ]},
+  'VP':{titulo:'VP Comercial',pessoas:[
+    {nome:'Marcus Edrisse P. Pinheiro',funcao:'Diretor Comercial',sal:'R$ 45.000'}
+  ]}
+};
+
+function showGroup(key){
+  var g=GRUPOS_EL[key];
+  document.getElementById('modal-titulo').innerHTML=g.titulo+' <span>('+g.pessoas.length+' '+(g.pessoas.length>1?'elegíveis':'elegível')+')</span>';
+  var html='<table style="font-size:10.5px;"><thead><tr><th>Nome</th><th>Função atual</th><th class="r">Salário</th></tr></thead><tbody>';
+  g.pessoas.forEach(function(p){html+='<tr><td>'+p.nome+'</td><td>'+p.funcao+'</td><td class="r">'+p.sal+'</td></tr>';});
+  html+='</tbody></table>';
+  document.getElementById('modal-body').innerHTML=html;
+  document.getElementById('modal-ov').classList.add('on');
+}
+function closeModal(){document.getElementById('modal-ov').classList.remove('on');}
+function showApendice(){document.getElementById('modal-ap-ov').classList.add('on');}
+function closeApendice(){document.getElementById('modal-ap-ov').classList.remove('on');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+buildDots();
+goTo(1);
+calcSim();
+</script>
+</div>
+</body>
+</html>
